@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "deployStaging": "sst deploy --stage staging",
+    "deploy": "sst deploy --stage production",
+    "deploy:profile": "AWS_PROFILE=production sst deploy --stage production",
     "ada": "ada credentials update --account=291936423296 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once"
   },
   "dependencies": {
