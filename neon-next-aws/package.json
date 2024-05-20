@@ -9,6 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "generate": "drizzle-kit generate:pg --config=drizzle.config.js",
     "deployStaging": "npm run ada && sst deploy --stage staging",
     "deploy": "npm run ada && sst deploy --stage production",
     "deploy:profile": "AWS_PROFILE=production sst deploy --stage production",
@@ -25,7 +26,7 @@
   "devDependencies": {
     "aws-cdk-lib": "^2.142.1",
     "constructs": "^10.3.0",
-    "drizzle-kit": "^0.21.2",
+    "drizzle-kit": "0.20.18",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",

@@ -45,5 +45,12 @@
 
 ## (Optional) [Drizze ORM for modeling Postgres Neon DB](https://orm.drizzle.team/docs/get-started-postgresql#neon)
 
-- Drizzle ORM works with both Postgres, SQLite, MySQL. It can also help SQL migration with Typescript
+- Drizzle ORM works with both Postgres, SQLite, MySQL. It can also help SQL migration through drizzle toolkit
 - Drizzle ORM also works with Supabase, Vercel Postgres
+- Initialize table and manipulate Postgres Columns, [Read here](https://orm.drizzle.team/docs/column-types/pg)
+- [Init Migration with drizzle kit](https://orm.drizzle.team/kit-docs/commands), as we need to run migration everytime we change the schema.js
+
+```
+npx drizzle-kit generate:pg --config drizzle.config.js
+npm run generate
+```

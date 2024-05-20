@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1716226988750,
+      "tag": "0000_remarkable_carnage",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1716227171389,
+      "tag": "0001_pink_zzzax",
+      "breakpoints": true
+    }
+  ]
+}
