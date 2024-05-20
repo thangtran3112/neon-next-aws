@@ -25,7 +25,7 @@
 
 - `npx sst secrets set SECRET_VAL something_hidden --stage trathanl` //username
 - `npx sst secrets set SECRET_VAL something_hidden_prod --stage production`. [More CLI options](https://docs.sst.dev/packages/sst#sst-secrets)
-- `npx sst secrets set DATABASE_URL <Neon Postgres connection string> --stage trathanl`
+- `npx sst secrets set DATABASE_URL postgresql://nextdb_owner:TmRjbAi0YO6L@ep-dark-firefly-a6rprq49.us-west-2.aws.neon.tech/nextdb?sslmode=require --stage trathanl`
 - `npx sst secrets set DATABASE_URL <Neon Postgres connection string> --stage production`
 
 ## Setting up [Next API Routes with App Router](https://nextjs.org/docs/app/api-reference/file-conventions/route)
@@ -42,3 +42,8 @@
 ```
 
 ## (Optional) If using Neon Postgres DB, [install @neondatabase/serverless](https://github.com/neondatabase/serverless/blob/main/README.md)
+
+## (Optional) [Drizze ORM for modeling Postgres Neon DB](https://orm.drizzle.team/docs/get-started-postgresql#neon)
+
+- Drizzle ORM works with both Postgres, SQLite, MySQL. It can also help SQL migration with Typescript
+- Drizzle ORM also works with Supabase, Vercel Postgres
