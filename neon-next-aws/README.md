@@ -51,8 +51,8 @@
 - [Init Migration with drizzle kit](https://orm.drizzle.team/kit-docs/commands), as we need to run migration everytime we change the schema.js
 
 ```
-npx drizzle-kit generate:pg --config drizzle.config.js
 npm run generate
+npm run migrate
 ```
 
 - Because we are using AWS Lambda serverless, we need to [run migrations](https://orm.drizzle.team/kit-docs/overview#configuration) in advance:
@@ -62,3 +62,9 @@ drizzle-kit migrate
 ```
 
 - We are using AWS Parameter Store SDK to actually get secret values into `drizzle.config.js`
+
+## Drizzle ORM with Neon websocket:
+
+- To [use WebSocket on Neon](https://github.com/neondatabase/serverless/blob/main/README.md#example-nodejs-with-poolconnect), we need `neonConfig.webSocketConstructor = ws`
+
+- To use [Connection Pool with WebSocket for migration on drizzle](https://orm.drizzle.team/docs/get-started-postgresql#neon), we need `new Pool({ connectionString: DB_URL})`
