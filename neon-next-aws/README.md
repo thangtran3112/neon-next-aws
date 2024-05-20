@@ -54,3 +54,11 @@
 npx drizzle-kit generate:pg --config drizzle.config.js
 npm run generate
 ```
+
+- Because we are using AWS Lambda serverless, we need to [run migrations](https://orm.drizzle.team/kit-docs/overview#configuration) in advance:
+
+```
+drizzle-kit migrate
+```
+
+- We are using AWS Parameter Store SDK to actually get secret values into `drizzle.config.js`
