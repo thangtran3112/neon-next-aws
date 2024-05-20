@@ -17,13 +17,15 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.9.3",
+    "drizzle-orm": "^0.30.10",
     "next": "14.2.3",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "aws-cdk-lib": "2.142.1",
-    "constructs": "10.3.0",
+    "aws-cdk-lib": "^2.142.1",
+    "constructs": "^10.3.0",
+    "drizzle-kit": "^0.21.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
