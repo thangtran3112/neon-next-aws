@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "sst bind next dev",
+    "ada": "ada credentials update --account=339713184738 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once",
+    "dev": "npm run ada && sst bind next dev",
+    "clean:next": "rm -rf .next",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deployStaging": "sst deploy --stage staging",
-    "deploy": "sst deploy --stage production",
+    "deployStaging": "npm run ada && sst deploy --stage staging",
+    "deploy": "npm run ada && sst deploy --stage production",
     "deploy:profile": "AWS_PROFILE=production sst deploy --stage production",
-    "ada": "ada credentials update --account=291936423296 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once"
+    "delete:prod": "npx sst remove --stage production",
+    "delete:staging": "npx sst remove --stage staging"
   },
   "dependencies": {
     "react": "^18",
