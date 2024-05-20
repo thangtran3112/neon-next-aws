@@ -68,3 +68,5 @@ drizzle-kit migrate
 - To [use WebSocket on Neon](https://github.com/neondatabase/serverless/blob/main/README.md#example-nodejs-with-poolconnect), we need `neonConfig.webSocketConstructor = ws`
 
 - To use [Connection Pool with WebSocket for migration on drizzle](https://orm.drizzle.team/docs/get-started-postgresql#neon), we need `new Pool({ connectionString: DB_URL})`
+
+## Using [github action](https://github.com/actions/setup-node) to auto-deploy newest github merges
