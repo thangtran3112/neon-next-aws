@@ -40,3 +40,5 @@
   runtime: 'nodejs'
 }
 ```
+
+## (Optional) If using Neon Postgres DB, [install @neondatabase/serverless](https://github.com/neondatabase/serverless/blob/main/README.md)
