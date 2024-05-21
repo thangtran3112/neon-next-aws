@@ -8,6 +8,14 @@ on:
   push:
     branches:
       - main
+    # Optionally, we can have paths to specify which changes to watch for:
+    paths:
+      - ".github/workflows/main.yaml"
+      - "src/**"
+      - "*.json"
+      - "*.yaml"
+      - "*.config.js"
+      - "*.config.ts"
 
 jobs:
   deploy:
@@ -17,11 +25,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-      - name: Install Pnpm
-        run: npm i -g pnpm
 
-      - name: Install dependencies
+      - name: Install Project dependencies
         run: npm install
+
+      - name: Deploy to AWS with SST
+        run: npm run deploy
 
       # name: Install AWS Creds
       # name: Set SST Config Secrets
