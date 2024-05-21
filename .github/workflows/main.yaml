@@ -41,7 +41,7 @@ jobs:
           npx sst secrets set COMMIT_SHA '${{ github.sha }}' --stage production
 
       - name: Deploy to AWS with SST
-        run: pnpm run deploy
+        run: npm run deploy
 
       - name: Clean Up AWS Profile
         run: |
