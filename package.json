@@ -4,15 +4,15 @@
   "private": true,
   "scripts": {
     "ada": "ada credentials update --account=339713184738 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once",
-    "dev": "npm run ada && sst bind next dev",
+    "dev": "sst bind next dev",
     "clean:next": "rm -rf .next",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "generate": "drizzle-kit generate:pg --config=drizzle.config.js",
-    "migrate": "npm run ada && tsx src/app/cli/migrator.js",
+    "migrate": "tsx src/app/cli/migrator.js",
     "deployStaging": "npm run ada && sst deploy --stage staging",
-    "deploy": "npm run ada && sst deploy --stage production",
+    "deploy": "sst deploy --stage production",
     "deploy:profile": "AWS_PROFILE=production sst deploy --stage production",
     "delete:prod": "npx sst remove --stage production",
     "delete:staging": "npx sst remove --stage staging"
