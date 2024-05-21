@@ -1,21 +1,15 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Deploy via SST to AWS
+name: Deploy Production via SST to AWS
 
 on:
-  workflow_dispatch:
-  push:
+  pull_request:
     branches:
-      - main
-    # Optionally, we can have paths to specify which changes to watch for:
-    paths:
-      - ".github/workflows/main.yaml"
-      - "src/**"
-      - "*.json"
-      - "*.yaml"
-      - "*.config.js"
-      - "*.config.ts"
+      - production
+    types:
+      - closed
+  # workflow_dispatch:
 
 jobs:
   deploy:
@@ -40,7 +34,7 @@ jobs:
           restore-keys: |
             cache-${{ hashFiles('**/package-lock.json') }}-
 
-      - name: Install Project dependencies
+      - name: Install projects deps
         run: npm install
 
       - name: Install AWS Creds
@@ -54,9 +48,9 @@ jobs:
         run: |
           npx sst secrets set COMMIT_SHA '${{ github.sha }}' --stage production
 
-      #- name: Production Database Migrations
-      #  run: |
-      #    npm run migrate
+      - name: Production Database Migrations
+        run: |
+          npm run migrate
 
       - name: Deploy to AWS with SST
         run: npm run deploy
@@ -64,3 +58,7 @@ jobs:
       - name: Clean Up AWS Profile
         run: |
           rm -rf ~/.aws
+
+      # - name: Remove Staging Deployment
+      #   run: |
+      #     npx sst remove --stage staging
