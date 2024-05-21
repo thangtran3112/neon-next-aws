@@ -30,7 +30,7 @@ jobs:
         run: npm install
 
       - name: Install AWS Creds
-         run: |
+        run: |
           mkdir -p ~/.aws
           echo "[default]" > ~/.aws/credentials
           echo "aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
@@ -41,8 +41,8 @@ jobs:
           npx sst secrets set COMMIT_SHA '${{ github.sha }}' --stage production
 
       - name: Deploy to AWS with SST
-        run: npm run deploy
-        
+        run: pnpm run deploy
+
       - name: Clean Up AWS Profile
         run: |
           rm -rf ~/.aws
