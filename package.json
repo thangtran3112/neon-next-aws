@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "ada": "ada credentials update --account=339713184738 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once",
     "dev": "sst bind next dev",
     "clean:next": "rm -rf .next",
     "build": "next build",

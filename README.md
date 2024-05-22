@@ -2,9 +2,14 @@
 
 - [Credit Tutorial](https://youtu.be/T23Dv69j1JU?si=ws-mG6QyViBgE_fe)
 
-## Seting up:
+## Seting up
 
-- Scalfolding project: `npx create-next-app@latest`
+```
+aws configure
+npx create-next-app@latest
+npm create sst
+```
+
 - Add `sst` to existing project, run `npm create sst` in the root folder terminal
 - Reinstall all dependencies or upgrade: `npm i` and optionally `npm upgrade`
 - [SST IAM User](https://docs.sst.dev/advanced/iam-credentials)
@@ -63,7 +68,7 @@ drizzle-kit migrate
 
 - We are using AWS Parameter Store SDK to actually get secret values into `drizzle.config.js`
 
-## Drizzle ORM with Neon websocket:
+## Drizzle ORM with Neon websocket
 
 - To [use WebSocket on Neon](https://github.com/neondatabase/serverless/blob/main/README.md#example-nodejs-with-poolconnect), we need `neonConfig.webSocketConstructor = ws`
 
