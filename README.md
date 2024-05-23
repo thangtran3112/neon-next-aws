@@ -15,6 +15,10 @@ npm create sst
 - [SST IAM User](https://docs.sst.dev/advanced/iam-credentials)
 - Add [SST IAM Permissions](https://docs.sst.dev/advanced/iam-credentials#iam-permissions) (remember to change to correct AWS account number in the sample policy statements)
 
+## Solution Architecture
+
+![Open-next Serverless Architecture](architecture.png)
+
 ## Deployment (us-east-1)
 
 - With [default] AWS profile, under ~/aws/credentials, we can use `npm run deploy`
